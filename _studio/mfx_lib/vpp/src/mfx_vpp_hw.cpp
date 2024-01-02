@@ -6003,7 +6003,7 @@ mfxStatus ConfigureExecuteParams(
 
                         if (!executeParams.dstRects.empty())
                         {
-                            if (executeParams.dstRects.size() < StreamCount)
+                            if (executeParams.dstRects.capacity() < StreamCount)
                                 return MFX_ERR_INCOMPATIBLE_VIDEO_PARAM;
                         }
 
