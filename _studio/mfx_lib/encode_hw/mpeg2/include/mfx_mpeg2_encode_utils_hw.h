@@ -138,7 +138,7 @@ namespace MPEG2EncoderHW
         {
             mfxStatus sts = MFX_ERR_NONE;
             mfxExtBRC * extBRC = video.pExtBRC;
-            if (extBRC->pthis)
+            if (extBRC && extBRC->pthis)
             {
                 m_pBRC = extBRC;
             }
@@ -153,7 +153,10 @@ namespace MPEG2EncoderHW
 
         void  Close()
         {
-            m_pBRC->Close(m_pBRC->pthis);
+            if(m_pBRC->pthis)
+            {
+                m_pBRC->Close(m_pBRC->pthis);
+            }
             HEVCExtBRC::Destroy(m_BRCLocal);
         }
 
