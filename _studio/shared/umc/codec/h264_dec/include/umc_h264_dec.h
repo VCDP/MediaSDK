@@ -89,11 +89,7 @@ public:
         H264_LEVEL_61   = 61,
         H264_LEVEL_62   = 62,
 
-#if (MFX_VERSION >= MFX_VERSION_NEXT)
         H264_LEVEL_MAX  = 62,
-#else
-        H264_LEVEL_MAX  = 52,
-#endif
 
         H264_LEVEL_9    = 9  // for SVC profiles
     };
